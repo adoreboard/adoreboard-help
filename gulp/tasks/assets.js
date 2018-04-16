@@ -15,6 +15,7 @@ const size = require('gulp-size');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const when = require('gulp-if');
+const uncss = require('postcss-uncss');
 
 // 'gulp scripts' -- creates a index.js file from your JavaScript files and
 // creates a Sourcemap for it
@@ -49,6 +50,13 @@ gulp.task('scripts', () =>
     .pipe(gulp.dest('.tmp/assets/javascript'))
 );
 
+var plugins = [
+    uncss({
+        html: ['./src/*.html', './src/**/*.html'],
+        ignore: ['*.js']
+    }),
+];
+
 // 'gulp styles' -- creates a CSS file from your SASS, adds prefixes and
 // creates a Sourcemap
 // 'gulp styles --prod' -- creates a CSS file from your SASS, adds prefixes and
@@ -72,6 +80,7 @@ gulp.task('styles', () =>
     })))
     .pipe(when(argv.prod, rev()))
     .pipe(when(!argv.prod, sourcemaps.write('.')))
+    .pipe(when(argv.prod, postcss(plugins)))
     .pipe(when(argv.prod, gulp.dest('.tmp/assets/stylesheets')))
     .pipe(when(argv.prod, when('*.css', gzip({append: true}))))
     .pipe(when(argv.prod, size({
@@ -103,4 +112,16 @@ gulp.task('serve', (done) => {
   gulp.watch('src/assets/javascript/**/*.js', gulp.series('scripts', reload));
   gulp.watch('src/assets/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('src/assets/images/**/*', gulp.series('images', reload));
+});
+
+gulp.task('uncss', function () {
+    var plugins = [
+        uncss({
+            html: ['./src/*.html', './src/**/*.html'],
+            ignore: ['*.js']
+        }),
+    ];
+    return gulp.src('./dist/assets/stylesheets/*.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./dist/assets/stylesheets/'));
 });
