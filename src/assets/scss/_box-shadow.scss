@@ -46,3 +46,9 @@
   .shadow-4-l { box-shadow: $box-shadow-4; }
   .shadow-5-l { box-shadow: $box-shadow-5; }
 }
+
+.shadow-1-hover {
+  &:hover, &:focus {
+    box-shadow: $box-shadow-1;
+  }
+}

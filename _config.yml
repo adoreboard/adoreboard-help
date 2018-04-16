@@ -2,7 +2,7 @@
 # Can be used in your theme by calling 'site.title' and so on
 title: Adoreboard | Help Center
 description:
-url: 
+url:
 
 support: support@adoreboard.com
 emotics: https://beta.emotics.io/
@@ -54,6 +54,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-redirect-from
 
-button: f7 fw5 ttu tracked link br2 ph4 pv3 flex justify-center items-center white bg-light-green grow transition-bezier
+button: f7 fw5 ttu tracked no-underline br2 ph4 pv3 flex justify-center items-center white bg-light-green grow transition-bezier
 
 aside_link: link f6 black-30 pv2 db ph3 hover-black relative

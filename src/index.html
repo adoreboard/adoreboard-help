@@ -5,7 +5,7 @@ title: "How can we help?"
 <div id="help" class="relative z-2">
 
   <div class="search white">
-    <h1 class="tc f1 sans-serif fw2 mt5">{{page.title}}</h1>
+    <h1 class="tc f2 f1-ns sans-serif fw2 mt5">{{page.title}}</h1>
 
     <div class="center tc mw7 ph3 mt3 relative">
       <label aria-label="Search" class="dn" hidden for="search">Search</label>
@@ -21,10 +21,10 @@ title: "How can we help?"
         <div class="ph3-ns w-100 w-third-ns mb4">
           <article class="br2 card center h-100 w-100 bg-white relative overflow-hidden">
             <a class="absolute w-100 h-100 z-2" href="{{post.url}}"></a>
-            <div class="pa4">
-              <h2 class="post-title f5 serif f3-ns mv0 mb2 normal">{{post.title}}</h2>
+            <div class="pa3 pa4-l">
+              <h2 class="post-title f4 serif f3-l mv0 mb2 normal">{{post.title}}</h2>
               <h3 class="f8 mv0 pt2 fw5 sans-serif lighter-gray normal">Last updated: <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></h3>
-              <ul class="f6 list--card post-list">
+              <ul class="f7 f6-ns list--card post-list">
                 {%for item in post.sections%}
                 <li class="post-list-item light-green pv1 relative"><span class="black">{{item}}</span></li>
                 {%endfor%}

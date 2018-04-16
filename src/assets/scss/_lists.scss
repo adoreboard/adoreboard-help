@@ -29,23 +29,34 @@
   }
   .active a {
     font-weight: 500;
-    color: $black;
+    color: inherit;
     &::before {
       content: "";
       width: 3px;
       background-color: currentColor;
+    }
+    &.active--blue::before {
+      background-color: $blue;
+    }
+    &.active--purple::before {
+      background-color: $purple;
+    }
+    &.active--yellow::before {
+      background-color: $yellow;
     }
   }
 }
 
 .list--card {
   padding-left: 1em;
-  visibility: hidden;
-  li {
-    will-change: opacity transform;
-    opacity: 0;
-    transition: all .2s cubic-bezier(.77,0,.175,1);;
-    // animation: fadeIn .4s ease;
-    // animation-fill-mode: both;
+  @media #{$breakpoint-not-small}{
+    visibility: hidden;
+    li {
+      will-change: opacity transform;
+      opacity: 0;
+      transition: all .2s cubic-bezier(.77,0,.175,1);;
+      // animation: fadeIn .4s ease;
+      // animation-fill-mode: both;
+    }
   }
 }

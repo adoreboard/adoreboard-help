@@ -44,15 +44,19 @@ body {
     &::after {
       opacity: 1;
     }
-    .list--card {
-      visibility: visible;
-    }
-    .list--card li {
-      // animation: fadeIn .4s ease;
-      // animation-fill-mode: both;
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+  }
+  @media #{$breakpoint-not-small}{
+	  &:hover {
+      .list--card {
+        visibility: visible;
+      }
+      .list--card li {
+        // animation: fadeIn .4s ease;
+        // animation-fill-mode: both;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -68,7 +72,7 @@ body {
   margin-top: 7rem;
 }
 
-.article {
+.fade-in {
   // top: -300px;
   will-change: auto;
   animation: fadeIn .4s ease;
@@ -123,4 +127,13 @@ hr {
 
 #help {
   top: -330px;
+}
+
+::-moz-selection {
+  background: $link;
+  color: white;
+}
+::selection {
+  background: $link;
+  color: white;
 }

@@ -32,3 +32,19 @@
   outline: 1px dotted currentColor;
 }
 
+.link-underline-hover {
+  h3::after {
+    content: '';
+    display: block;
+    border-bottom: solid 2px;
+    border-color: inherit;
+    transform: scaleX(0);
+    transition: $transition-bezier;
+    transform-origin: 0% 50%;
+  }
+  &:hover, &:focus {
+    h3::after {
+      transform: scaleX(1);
+    }
+  }
+}

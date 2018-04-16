@@ -1,11 +1,12 @@
 $total-items: 4;
 
-
-@for $i from 1 through $total-items {
-  .list--card {
-    li:nth-child(#{$i}) {
-      transition-delay: .1s * $i;
-      transform: translateY(20px + $i);
+@media #{$breakpoint-not-small}{
+  @for $i from 1 through $total-items {
+    .list--card {
+      li:nth-child(#{$i}) {
+        transition-delay: .1s * $i;
+        transform: translateY(20px + $i);
+      }
     }
   }
 }
