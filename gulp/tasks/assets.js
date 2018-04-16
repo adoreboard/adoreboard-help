@@ -74,7 +74,7 @@ gulp.task('styles', () =>
       showFiles: true
     }))
     .pipe(when(argv.prod, rename({suffix: '.min'})))
-    .pipe(when(argv.prod, when('*.css', cssnano({autoprefixer: false, discardComments: false}))))
+    .pipe(when(argv.prod, when('*.css', cssnano({autoprefixer: false}))))
     .pipe(when(argv.prod, size({
       showFiles: true
     })))
