@@ -53,7 +53,7 @@ gulp.task('scripts', () =>
 var plugins = [
     uncss({
         html: ['./src/*.html', './src/**/*.html'],
-        ignore: ['*.js']
+        ignore: [/\.icon/, /\.icon-*/, /\.hover-white/, /\.list--card/, /\.card--border/, /\.bg-blue/, /\.bg-purple/, /\.bg-yellow/, /\.bg-light-green/, /\.tracked/, /\.grow/, /\.transition-bezier/, /\.black-30/, /\.hover-black/, /\.link/, /\.black-30/, /\.active/, /\.pv2/, /\.b--purple/, /\.b--yellow/, /\.b--blue/]
     }),
 ];
 
@@ -74,7 +74,7 @@ gulp.task('styles', () =>
       showFiles: true
     }))
     .pipe(when(argv.prod, rename({suffix: '.min'})))
-    .pipe(when(argv.prod, when('*.css', cssnano({autoprefixer: false}))))
+    .pipe(when(argv.prod, when('*.css', cssnano({autoprefixer: false, discardComments: false}))))
     .pipe(when(argv.prod, size({
       showFiles: true
     })))
