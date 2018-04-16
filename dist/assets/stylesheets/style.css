@@ -678,6 +678,20 @@ input[type="url"],
   to {
     transform: rotate(360deg); } }
 
+@keyframes heartbeat {
+  0% {
+    transform: scale(1); }
+  20% {
+    transform: scale(0.75); }
+  40% {
+    transform: scale(1); }
+  60% {
+    transform: scale(0.75); }
+  80% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1); } }
+
 .rotating {
   will-change: transform;
   animation: rotating 500s linear infinite; }
@@ -2777,6 +2791,10 @@ code, .code {
 .input-reset::-moz-focus-inner {
   border: 0;
   padding: 0; }
+
+.input-icon:checked svg, .input-icon:active svg {
+  fill: #49E5B9;
+  transform: scale(1.1); }
 
 /*
 
@@ -7046,9 +7064,15 @@ code, .code {
 .icon-inline {
   margin-right: 3px; }
 
-.icon-thumbs-up, .icon-thumbs-down {
+.icon-thumbs-up, .icon-thumbs-down, .icon-heart {
   width: 1.375rem;
   height: 1.375rem; }
+
+.icon-heart {
+  animation: heartbeat 1s;
+  animation-iteration-count: 3;
+  will-change: transform;
+  animation-fill-mode: forwards; }
 
 .icon-search {
   position: absolute;
@@ -7082,7 +7106,7 @@ code, .code {
   Add custom styles here.
 
 */
-html, body, input {
+html, body, input, button, textarea {
   font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
