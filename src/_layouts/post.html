@@ -44,8 +44,9 @@ layout: default
             </div><!-- /feedback -->
             <form id="feedback-form" class="dn" name="feedback" action="POST" netlify>
               <div class="flex flex-column items-center justify-center">
+                <input name="bot-field" class="clip">
                 <input name="topic" type="hidden" value='{{page.title}}'>
-                <textarea name="feedback" id="feedback" rows="10" placeholder="How can we improve this section?" class="pa3 mb3 br3 black b--light-silver w-100"></textarea>
+                <textarea required name="feedback" id="feedback" rows="10" placeholder="How can we improve this section?" class="pa3 mb3 br3 black b--light-silver w-100"></textarea>
                 <button type="submit" class="{{site.button}} b--none input-reset">Send feedback</button>
               </div>
             </form>

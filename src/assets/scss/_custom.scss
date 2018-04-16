@@ -72,6 +72,21 @@ body {
   margin-top: 7rem;
 }
 
+.input.white {
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   color: rgba(white, .65);
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(white, .65);
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: rgba(white, .65);
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: rgba(white, .65);
+  }
+}
+
 .fade-in {
   // top: -300px;
   will-change: auto;
@@ -81,19 +96,6 @@ body {
 
 .article--border {
   height: 5px;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
- color: rgba(white, .65);
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: rgba(white, .65);
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: rgba(white, .65);
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: rgba(white, .65);
 }
 
 .post-content {
