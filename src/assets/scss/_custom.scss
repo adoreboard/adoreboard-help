@@ -98,6 +98,8 @@ body {
   height: 5px;
 }
 
+/* uncss:ignore start */
+
 .post-content {
   color: $light-gray;
   h2 {
@@ -115,6 +117,8 @@ body {
     }
   }
 }
+
+/* uncss:ignore end */
 
 video {
   max-width: 100%;
