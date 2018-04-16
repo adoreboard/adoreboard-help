@@ -6,7 +6,7 @@ layout: default
     <article class="bg-white article br2 shadow-2">
       <div class="bg-{{page.color.title}} br2 br--top article--border absolute w-100 left-0 top-0"></div>
       <header class="tc ph4 pv4 pv5-ns">
-        <h1 class="serif f2 f1-ns mt0 normal fw3 pt3" itemprop="name headline">{{ page.title }}</h1>
+        <h1 class="serif f2 f1-ns mt0 normal pt3" itemprop="name headline">{{ page.title }}</h1>
         <h3 class="f6 f5-ns sans-serif lighter-gray fw5 mb0 pb3">Last updated: <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time></h3>
       </header>
 
@@ -31,14 +31,25 @@ layout: default
           </div>
           <div class="pv4">
             <hr>
-            <h4 class="ttu light-gray fw5 pv3 tc tracked-tight f7 link-underline-hover">Did this answer your question?</h4>
-            <div class="flex flex-row justify-center items-center">
-              <div class="ph3 light-gray hover-light-green grow">
-                {% include icon/thumbs-down.svg %}
+            <h4 id="form-label" class="ttu light-gray fw5 pt3 pb1 tc tracked-tight f7 link-underline-hover">Was this helpful?</h4>
+            <div id="feedback">
+              <div class="flex flex-row justify-center items-center">
+                <div class="grow-large">
+                  <a id="show-form" class="ph3 light-gray hover-light-green link" href="javascript:void(0)">{% include icon/thumbs-down.svg %}</a>
+                </div>
+                <div class="grow-large">
+                  <a id="show-thanks" class="ph3 light-gray hover-light-green" href="javascript:void(0)">{% include icon/thumbs-up.svg %}</a>
+                </div>
               </div>
-              <div class="ph3 light-gray hover-light-green grow">
-                {% include icon/thumbs-up.svg %}
+            </div><!-- /feedback -->
+            <form id="feedback-form" class="dn" name="feedback" action="POST" netlify>
+              <div class="flex flex-column items-center justify-center">
+                <textarea name="feedback" id="feedback" rows="10" placeholder="How can we improve this section?" class="pa3 mb3 br3 black b--light-silver w-100"></textarea>
+                <button type="submit" class="{{site.button}} b--none input-reset">Send feedback</button>
               </div>
+            </form>
+            <div class="tc dn light-green" id="thanks">
+              {% include icon/heart.svg %}
             </div>
           </div>
 
@@ -50,12 +61,12 @@ layout: default
     {% if page.next.url %}
     <a href="{{page.next.url}}" class="mt6 db no-underline link-underline-hover">
       <h4 class="ttu light-gray fw5 tracked-tight f7 mb2 no-underline">Next article</h4>
-      <h3 class="serif f2 normal fw3 no-underline black ma0 dib b--{{page.next.color.title}}">{{page.next.title}}</h3>
+      <h3 class="serif f2 normal no-underline black ma0 dib b--{{page.next.color.title}}">{{page.next.title}}</h3>
     </a>
     {%elsif page.previous.url%}
     <a href="{{page.previous.url}}" class="mt6 db no-underline link-underline-hover">
       <h4 class="ttu light-gray fw5 tracked-tight f7 mb2 no-underline">Previous article</h4>
-      <h3 class="serif f2 normal fw3 no-underline black ma0 dib b--{{page.previous.color.title}}">{{page.previous.title}}</h3>
+      <h3 class="serif f2 normal no-underline black ma0 dib b--{{page.previous.color.title}}">{{page.previous.title}}</h3>
     </a>
     {%endif%}
   </div>

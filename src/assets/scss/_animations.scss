@@ -50,6 +50,27 @@ $total-items: 4;
   }
 }
 
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale( .75);
+  }
+  40% {
+    transform: scale( 1);
+  }
+  60% {
+    transform: scale( .75);
+  }
+  80% {
+    transform: scale( 1);
+  }
+  100% {
+    transform: scale( 1);
+  }
+}
+
 .rotating {
   will-change: transform;
   animation: rotating 500s linear infinite;

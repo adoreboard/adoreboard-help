@@ -16,12 +16,13 @@ exclude: ['assets']
 # called by using 'site.author.name' and so on
 # NOTE: Don't use @ in front of your Twitter username
 author:
-  name: Michael Mckeever
-  email: michael@mckvr.com
-  uri:
-  bio:
-  twitter:
-  github:
+  name: Adoreboard
+  email: support@adoreboard.com
+  uri: adoreboard.com
+  bio: Emotionally intelligent insights
+
+twitter:
+  username: adoreboard
 
 # _config.build.yml overwrites these options when you run `gulp build`
 # Enables future posts (posts with dates in the future) and drafts
