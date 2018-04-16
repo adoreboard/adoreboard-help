@@ -1,0 +1,126 @@
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+
+/*
+
+  STYLES
+
+  Add custom styles here.
+
+*/
+
+html, body, input {
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: $black;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.card {
+  box-shadow: $box-shadow-1;
+  transition: $transition-bezier;
+  &::after {
+    box-shadow: $box-shadow-2;
+    opacity: 0;
+    transition: $transition-bezier;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $box-shadow-2;
+    .card--border {
+      height: 5px;
+    }
+    &::after {
+      opacity: 1;
+    }
+    .list--card {
+      visibility: visible;
+    }
+    .list--card li {
+      // animation: fadeIn .4s ease;
+      // animation-fill-mode: both;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+.card--border {
+  height: 3px;
+  transition: $transition-bezier;
+}
+.header {
+  height: 380px;
+}
+
+.posts {
+  margin-top: 7rem;
+}
+
+.article {
+  // top: -300px;
+  will-change: auto;
+  animation: fadeIn .4s ease;
+  animation-fill-mode: forwards;
+}
+
+.article--border {
+  height: 5px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ color: rgba(white, .65);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(white, .65);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(white, .65);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(white, .65);
+}
+
+.post-content {
+  color: $light-gray;
+  h2 {
+    font-size: $font-size-4;
+    font-weight: 500;
+  }
+  h2,h3,h4,h5,h6 {
+    color: $black;
+  }
+  a {
+    color: $link;
+    transition: $transition-base;
+    &:hover, &:focus {
+      color: darken($link, 15%);
+    }
+  }
+}
+
+video {
+  max-width: 100%;
+}
+
+hr {
+  border:0;
+  border-top:1px solid $light-silver;
+  margin:0;
+  height:1px;
+}
+
+#help {
+  top: -330px;
+}

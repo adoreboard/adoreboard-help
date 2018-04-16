@@ -1,0 +1,51 @@
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+
+/*
+
+   LISTS
+   http://tachyons.io/docs/elements/lists/
+
+*/
+
+.list {         list-style-type: none; }
+
+.list--aside {
+  a {
+    &::before {
+      content: "";
+      width: 0;
+      position: absolute;
+      transition: width .4s ease;
+      height: 100%;
+      top:0;
+      left:0;
+      will-change: width;
+    }
+  }
+  .active a {
+    font-weight: 500;
+    color: $black;
+    &::before {
+      content: "";
+      width: 3px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.list--card {
+  padding-left: 1em;
+  visibility: hidden;
+  li {
+    will-change: opacity transform;
+    opacity: 0;
+    transition: all .2s cubic-bezier(.77,0,.175,1);;
+    // animation: fadeIn .4s ease;
+    // animation-fill-mode: both;
+  }
+}

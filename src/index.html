@@ -1,0 +1,40 @@
+---
+layout: default
+title: "How can we help?"
+---
+<div id="help" class="relative z-2">
+
+  <div class="search white">
+    <h1 class="tc f1 sans-serif fw2 mt5">{{page.title}}</h1>
+
+    <div class="center tc mw7 ph3 mt3 relative">
+      <label aria-label="Search" class="dn" hidden for="search">Search</label>
+      <input name="search" id="search" placeholder="Search keywords e.g. topics, snippets, themes" class="fuzzy-search pl5 bg-animate input-reset input input-icon ba b--transparent br-pill pa3 mb2 db w-100 bg-white-10 hover-bg-white-20 white" type="search">
+      {% include icon/search.svg %}
+    </div>
+
+  </div><!-- /search -->
+
+  <div class="container center">
+    <div class="flex flex-wrap ph3 ph0-ns w-100 list posts relative z-2">
+      {% for post in site.posts %}
+        <div class="ph3-ns w-100 w-third-ns mb4">
+          <article class="br2 card center h-100 w-100 bg-white relative overflow-hidden">
+            <a class="absolute w-100 h-100 z-2" href="{{post.url}}"></a>
+            <div class="pa4">
+              <h2 class="post-title f5 serif f3-ns mv0 mb2 normal">{{post.title}}</h2>
+              <h3 class="f8 mv0 pt2 fw5 sans-serif lighter-gray normal">Last updated: <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></h3>
+              <ul class="f6 list--card post-list">
+                {%for item in post.sections%}
+                <li class="post-list-item light-green pv1 relative"><span class="black">{{item}}</span></li>
+                {%endfor%}
+              </ul>
+            </div>
+            <div class="bg-{{post.color.title}} card--border absolute w-100 left-0 bottom-0"></div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div><!-- /container -->
+
+</div><!-- /#posts -->

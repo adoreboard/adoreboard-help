@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<div class="container center">
+  <article class="bg-white article br2 shadow-2 relative z-2">
+    <div class="bg-{{page.color.title}} br2 br--top article--border absolute w-100 left-0 top-0"></div>
+    <header class="tc ph4 pv5">
+      <h1 class="serif f1 mt0 normal fw3 pt3" itemprop="name headline">{{ page.title }}</h1>
+      <h3 class="f5 sans-serif lighter-gray fw5 mb0 pb3">Last updated: <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time></h3>
+    </header>
+
+    <div class="flex flex-row" itemprop="articleBody">
+      <aside id="sticky" class="w-30 h-auto self-start">
+        <div id="post-menu" class="bg-washed-blue br3 br--right w-100 pv3 sticky">
+          <h2 class="ttu light-gray fw5 tracked-tight f7 ph3 pt2 ma0 mb3">Sections</h2>
+          <nav class="post-menu">
+            <ul class="list list--aside pa0 ma0">
+              {%for item in page.sections%}
+              <li>
+                <a class="{{site.aside_link}}" href="#{{item | slugify}}">{{item}}</a>
+              </li>
+              {%endfor%}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <section class="w-70 pl5 pr4 lh-copy">
+        <div class="post-content">
+          {{ content }}
+        </div>
+        <div class="pv4">
+          <hr>
+          <h4 class="ttu light-gray fw5 pv3 tc tracked-tight f7">Did this answer your question?</h4>
+          <div class="flex flex-row justify-center items-center">
+            <div class="ph3 light-gray hover-light-green grow">
+              {% include icon/thumbs-down.svg %}
+            </div>
+            <div class="ph3 light-gray hover-light-green grow">
+              {% include icon/thumbs-up.svg %}
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </article>
+</div><!-- /container -->

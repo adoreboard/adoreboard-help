@@ -1,0 +1,55 @@
+.icon {
+  height:1em;
+  fill: currentColor;
+  width:1em;
+}
+
+.icon-container {
+  display: inline-flex;
+  align-self: center;
+  position: relative;
+  height: 1em;
+  width: 1em;
+  .icon {
+    bottom: -0.125em;
+    position: absolute;
+  }
+}
+
+.icon-inline {
+  margin-right: 3px;
+}
+
+.icon-thumbs-up, .icon-thumbs-down {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.icon-search {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 2.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon-shape1 {
+  left: -1%;
+  top: -10%;
+  animation: rotating 1000s linear infinite;
+}
+
+.icon-shape2 {
+  left: 20%;
+  top:-15%;
+  animation: rotating 1500s linear infinite reverse;
+  animation-delay: 1s;
+}
+
+.icon-shape3 {
+  left: 65%;
+  top: -20%;
+  animation: rotating 1500s linear infinite reverse;
+  animation-delay: 2s;
+}
