@@ -25,4 +25,7 @@ When you login to Emotics you will have two ways to upload data.
 1. Click on the ‘Add a Dataset’ link
 2. Drag and drop the files you wish to upload or choose the browse option
 
-{% include video.html src="drag-drop.mp4" %}
+<video autoplay loop>
+  <source src="{{site.url}}/assets/images/drag-drop.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
