@@ -7,6 +7,8 @@ var ms = new MenuSpy(elm,{
 
 stickybits('#sticky', {useStickyClasses: true});
 
+var scroll = new SmoothScroll('a[href*="#"]');
+
 var options = {
     valueNames: [ 'post-title', 'post-list-item']
 };

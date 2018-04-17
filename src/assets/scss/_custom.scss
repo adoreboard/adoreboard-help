@@ -103,11 +103,25 @@ body {
 .post-content {
   color: $light-gray;
   h2 {
+    font-size: $font-size-3;
+  }
+  h3 {
     font-size: $font-size-4;
-    font-weight: 500;
+  }
+  h4 {
+    font-size: $font-size-5;
   }
   h2,h3,h4,h5,h6 {
     color: $black;
+    font-weight: 500;
+    transition: $transition-base;
+    &:hover {
+      .anchor {
+        transition: $transition-base;
+        visibility: visible;
+        opacity: 100;
+      }
+    }
   }
   a {
     color: $link;

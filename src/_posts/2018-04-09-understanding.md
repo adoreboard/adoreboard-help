@@ -14,13 +14,13 @@ sections:
   - Organising data
 ---
 
-## <a id="logging-in"></a>Logging in
+{% include title.html title="Logging in" heading="##" %}
 
 Web link: {{site.emotics}}
 
 When you login to Emotics you will have two ways to upload data.
 
-## <a id="uploading-data"></a>Uploading Data
+{% include title.html title="Uploading data" heading="##" %}
 
 1. Click on the ‘Add a Dataset’ link
 2. Drag and drop the files you wish to upload or choose the browse option
